@@ -4,7 +4,7 @@ Server::Server(){
 
     fd = socket(PF_INET,SOCK_STREAM,0);
     assert(fd >= 0);
-
+    printf("server fd:%d\n",fd);
     struct sockaddr_in server_address;
     bzero(&server_address, sizeof(server_address));
 
@@ -65,7 +65,7 @@ void Server::Server_echo()
         int str_len;
         while((str_len = read(connfd,message,BUF_SIZE)) != 0)
         {
-            printf("client message:%s",message);
+            printf("client message:%s\n",message);
             write(connfd,message,str_len);
         }
         close(connfd);

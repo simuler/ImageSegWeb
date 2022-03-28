@@ -9,7 +9,7 @@
 int main() {
     int sockfd = socket(AF_INET, SOCK_STREAM, 0);
     assert(sockfd != -1);
-
+    printf("client fd:%d\n",sockfd);
     struct sockaddr_in serv_addr;
     bzero(&serv_addr, sizeof(serv_addr));
     serv_addr.sin_family = AF_INET;
